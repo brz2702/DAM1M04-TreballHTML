@@ -1,0 +1,8 @@
+:root{
+    --fons:#0d0e0e
+    --font: 
+}
+
+body {
+  background: var(--fons);
+}
