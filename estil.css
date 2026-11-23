@@ -1,8 +1,54 @@
 :root{
-    --fons:#0d0e0e
-    --font: 
+  --fons: #0d0e0e;
+  --text: #ebece7;
+  --roig: #da0a15;
+  --font-Titulo: 'Playfair Display', Georgia, serif;
+  --font-Subtitulo: 'Anton', Impact, sans-serif;
+} 
+
+header {
+  position: sticky;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  width: 100%;
+  background: var(--fons);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+    width: 75%;
+    align-items: center;
+    padding: 0 32px;
+    color: var(--font-Subtitulo);
+    background: var(--fons);
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--font-Subtitulo);
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    gap: 28px;
+}
+
+.nav_links > a {
+    color: var(--text);
+    background-color: transparent;
+}
+
+.nav_links > a:hover {
+    color: var(--roig);
 }
 
 body {
-  background: var(--fons);
+  margin: 0;
 }
