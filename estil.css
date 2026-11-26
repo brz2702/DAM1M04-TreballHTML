@@ -1,5 +1,7 @@
 :root{
   --fons: #0d0e0e;
+  --fons-nav: #0c0d0d80;
+  --fons-menu: #0d0e0ef2;
   --text: #ebece7;
   --roig: #da0a15;
   --font-Titulo: 'Playfair Display', Georgia, serif;
@@ -8,23 +10,31 @@
 
 header {
   position: sticky;
-  display: flex;
   top: 0;
-  justify-content: center;
-  width: 100%;
-  background: var(--fons);
-  backdrop-filter: blur(12px);
+  z-index: 10;
 }
 
 nav {
     display: flex;
-    margin: 0;
-    justify-content: space-around;
-    width: 75%;
-    align-items: center;
-    padding: 0 32px;
+    height: 80px;
+    justify-content: center;
     color: var(--font-Subtitulo);
+<<<<<<< Updated upstream
     background: var(--fons);
+=======
+    background: var(--fons-nav);
+    backdrop-filter: blur(12px);
+}
+
+.nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 32px;
+>>>>>>> Stashed changes
 }
 
 a {
@@ -35,20 +45,238 @@ a {
 .nav_links {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
     font-size: 20px;
-    gap: 28px;
+    gap: clamp(16px, 4vw, 100px);
 }
 
 .nav_links > a {
     color: var(--text);
     background-color: transparent;
+    white-space: nowrap;
 }
 
 .nav_links > a:hover {
     color: var(--roig);
 }
 
+/*"Destacar visualment la pàgina activa"*/
+.current_page {
+  animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: var(--text);
+  }
+  50% {
+    color: var(--roig);
+  }
+  100% {
+    color: var(--text);
+  }
+}
+
 body {
+<<<<<<< Updated upstream
   margin: 0;
+=======
+  margin: 0;
+  background-color: var(--fons);
+}
+/* hero */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 40px;
+}
+
+.foto1{
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.foto1 img{
+  border-radius: 5%;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.45);
+}
+
+h2 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text)
+}
+
+.text1 ul {
+  list-style: none;
+}
+
+.text1 li {
+  color: var(--text);
+  margin-bottom: 1.25em;
+}
+
+.texto-hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.texto-hero p {
+  color: var(--text);
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+}
+
+.menu_toggle,
+.menu_button {
+  display: none;
+}
+
+@media (max-width: 766.98px) {
+  nav {
+    position: relative;
+  }
+  
+  .nav_container {
+    padding: 0 16px;
+  }
+  
+  .menu_toggle {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+  }
+  
+  .menu_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+  
+  .menu_toggle:focus-visible + .menu_button {
+    outline: 2px solid var(--roig);
+    outline-offset: 2px;
+  }
+
+  /*amb el span es dibuixen tres barres blanques*/
+  .menu_button span,
+  .menu_button span::before,
+  .menu_button span::after {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .menu_button span {
+    position: relative;
+  }
+
+  .menu_button span::before,
+  .menu_button span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  
+  /*marges que separen les barres blanques*/
+  .menu_button span::before {
+    top: -8px;
+  }
+  
+  .menu_button span::after  {
+    top: 8px;
+  }
+
+  /*les tres barres formen una creu mentre estigui obert el menu*/
+  .menu_toggle:checked + .menu_button span {
+    background-color: transparent;
+  }
+  
+  .menu_toggle:checked + .menu_button span::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu_toggle:checked + .menu_button span::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /*nou format de la caixa dels links*/
+  .nav_links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--fons-menu);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--roig);
+  }
+
+  .menu_toggle:checked ~ .nav_links {
+    display: flex;
+  }
+
+  .nav_links > a {
+    padding: 16px 24px;
+    text-align: center;
+    border-bottom: 1px solid #ebece71a;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin: 16px;
+  }
+
+  .foto1 {
+    margin: 0;
+  }
+
+  .foto1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  .text1 {
+    min-width: 0;
+  }
+
+  .text1 h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+  }
+
+  .text1 ul {
+    margin: 0;
+    padding: 0;
+  }
+>>>>>>> Stashed changes
 }
