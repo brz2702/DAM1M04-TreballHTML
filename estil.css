@@ -19,9 +19,6 @@ nav {
     height: 80px;
     justify-content: center;
     color: var(--font-Subtitulo);
-<<<<<<< Updated upstream
-    background: var(--fons);
-=======
     background: var(--fons-nav);
     backdrop-filter: blur(12px);
 }
@@ -34,7 +31,7 @@ nav {
     max-width: 1200px;
     box-sizing: border-box;
     padding: 0 32px;
->>>>>>> Stashed changes
+    opacity: 0.8;
 }
 
 a {
@@ -80,9 +77,6 @@ a {
 }
 
 body {
-<<<<<<< Updated upstream
-  margin: 0;
-=======
   margin: 0;
   background-color: var(--fons);
 }
@@ -278,5 +272,4 @@ p {
     margin: 0;
     padding: 0;
   }
->>>>>>> Stashed changes
 }
