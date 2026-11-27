@@ -1,5 +1,7 @@
 :root{
   --fons: #0d0e0e;
+  --fons-nav: #0c0d0d80;
+  --fons-menu: #0d0e0ef2;
   --text: #ebece7;
   --roig: #da0a15;
   --font-Titulo: 'Playfair Display', Georgia, serif;
@@ -8,23 +10,27 @@
 
 header {
   position: sticky;
-  display: flex;
   top: 0;
-  justify-content: center;
-  width: 100%;
-  background: var(--fons);
-  backdrop-filter: blur(12px);
+  z-index: 10;
 }
 
 nav {
     display: flex;
-    margin: 0;
-    justify-content: space-around;
-    width: 75%;
-    align-items: center;
-    padding: 0 32px;
+    height: 80px;
+    justify-content: center;
     color: var(--font-Subtitulo);
-    background: var(--fons);
+    background: var(--fons-nav);
+    backdrop-filter: blur(12px);
+}
+
+.nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 32px;
     opacity: 0.8;
 }
 
@@ -36,21 +42,42 @@ a {
 .nav_links {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
     font-size: 20px;
-    gap: 28px;
+    gap: clamp(16px, 4vw, 100px);
 }
 
 .nav_links > a {
     color: var(--text);
     background-color: transparent;
+    white-space: nowrap;
 }
 
 .nav_links > a:hover {
     color: var(--roig);
 }
 
+/*"Destacar visualment la pàgina activa"*/
+.current_page {
+  animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: var(--text);
+  }
+  50% {
+    color: var(--roig);
+  }
+  100% {
+    color: var(--text);
+  }
+}
+
 body {
+  margin: 0;
   background-color: var(--fons);
 }
 /* hero */
@@ -79,6 +106,15 @@ h2 {
 
 p {
   color: var(--text)
+}
+
+.text1 ul {
+  list-style: none;
+}
+
+.text1 li {
+  color: var(--text);
+  margin-bottom: 1.25em;
 }
 
 .texto-hero {

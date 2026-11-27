@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>index</title>
       <link rel="stylesheet" href="estil.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,36 +16,37 @@
     <div class="scroll"></div>
      <header>
         <nav>
-            <div>
-                <a href="index.html"><img src="/imatges/logo_estopa.png" height="80"></a>
-            </div>
-            <div class="nav_links">
-                <a href="musica.html">Música</a>
-                <a href="historia.html">Història</a>
-                <a href="concerts.html">Concerts</a>
-                <a href="contacte.html">Contacte</a>
+            <div class="nav_container">
+                <div>
+                    <a href="index.html"><img src="imatges/logo_estopa.png" height="80" alt="Estopa"></a>
+                </div>
+                <input type="checkbox" id="menu_toggle" class="menu_toggle">
+                <label for="menu_toggle" class="menu_button" aria-label="Obrir o tancar el menú">
+                    <span></span>
+                </label>
+                <div class="nav_links">
+                    <a href="index.html" class="current_page">Principal</a>
+                    <a href="musica.html">Música</a>
+                    <a href="historia.html">Història</a>
+                    <a href="concerts.html">Concerts</a>
+                    <a href="contacte.html">Contacte</a>
+                </div>
             </div>
         </nav>
      </header>
     <!-- Hero -->
-    <div class="hero">
-    <section class="foto1">
-        <a href="index.html"><img src="/imatges/images.jpg" height="300"></a>
-    </section>
-    <section class="text1">
-        <h2>Descubre las Novedades</h2>
-        <ul>
-            <br>
-            <p>La Maketa: Nuevo álbum de sencillos presentado por estopa planeado para 2027.</p>
-            <br>
-            <p>Gira el 28 de Noviembre del 2026: Compra las entradas y presentate en el Roig Arena
-                de Valencia.
-            </p>
-            <br>
-            <p>"De los bares a los Estadios": Recorre con nosotros las principales ciudades 
-                españolas en 2027.
-            </p>
-        </ul>
+    <section class="hero">
+        <div class="foto1">
+            <a href="index.html"><img src="imatges/hero_imatge.webp" height="300"></a>
+        </div>
+        <div class="text1">
+            <h2>Descobreix les Novetats</h2>
+            <ul>
+                <li>La Maketa: Nou àlbum de senzills presentat per Estopa planejat per a 2027.</li>
+                <li>Gira el 28 de Novembre del 2026: Compra les entrades i presenta't en el Roig Sorra de València.</li>
+                <li>"De los bares a los Estadios": Recorre amb nosaltres les principals ciutats espanyoles en 2027.</li>
+            </ul>
+        </div>
     </section>
     </div>
     <section class="gira">
@@ -66,4 +68,5 @@
    <footer>
     
    </footer>
+   </body>
 </html>
